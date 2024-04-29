@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Person>
+
+<table class="table">
+    <tr>
+        <th>姓名</th>
+        <th>年齡</th>
+        <th>
+            生日
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var student in Model)
+    {
+        <tr>
+            <td>@student.Name</td>
+            <td>@student.Age</td>
+            <td>@student.Birthday</td>
+            <td>
+                @Html.ActionLink("修改", "Edit", new { Name = student.Name }, new { @class = "btn btn-primary" }) |
+                @Html.ActionLink("刪除", "Delete", new { Name = student.Name }, new { @class = "btn btn-primary", onclick = "return confirm('確定要刪除 " + student.Name + " 嗎？')" })
+            </td>
+        </tr>
+    }
+</table>

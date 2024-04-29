@@ -1,0 +1,87 @@
+﻿@model PersonsViewModel
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(function () {
+            //$("#BirthdayTextBox").datepicker();
+            $('#Person_Birthday').datepicker({
+                dateFormat: 'yy-mm-dd', // 設置日期格式為年-月-日
+                onSelect: function (dateText) { // 當日期選擇時觸發
+                    $('#Person_Birthday').datepicker("option", "dateFormat", "yy-mm-dd");
+                }
+            });
+
+            // 當輸入框值發生變化時
+            $('#Person_Birthday').on("change", function () {
+                var selectedDate = $(this).val();
+                // 檢查是否為有效日期
+                if ($.datepicker.parseDate('yy-mm-dd', selectedDate) !== null) {
+                    // 如果是有效日期，將日期格式設置為指定的格式
+                    $('#Person_Birthday').datepicker("option", "dateFormat", "yy-mm-dd");
+                }
+            });
+
+        });
+    });
+</script>
+@{
+    ViewBag.Title = "帳號管理";
+    string actionName = !ViewBag.IsEditMode ? "Create" : "Edit";
+}
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.ErrorMessage
+    </div>
+}
+
+<h2>@(!ViewBag.IsEditMode ? "建立" : "修改")帳號</h2>
+@using (Html.BeginForm(actionName, "Person", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Person.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+               @*  @{
+                    IDictionary<string, object> htmlAttributes = new Dictionary<string, object>();
+                    if ((Model.Person.Name is not null))
+                    {
+                        // htmlAttributes.Add("readonly", "readonly");
+                    }
+                    htmlAttributes.Add("class", "form-control");
+                } *@
+                @Html.EditorFor(model => model.Person.Name, new { htmlAttributes = new { @class = "form-control", autocomplete = "off" } })
+                @Html.ValidationMessageFor(model => model.Person.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Person.Age, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Person.Age, new { htmlAttributes = new { @class = "form-control", autocomplete = "off" } })
+                @Html.ValidationMessageFor(model => model.Person.Age, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Person.Birthday, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Person.Birthday, new { htmlAttributes = new { @class = "form-control", autocomplete = "off" } })
+                @Html.ValidationMessageFor(model => model.Person.Birthday, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-primary">@(!ViewBag.IsEditMode ? "建立" : "修改")帳號</button>
+            </div>
+        </div>
+    </div>
+}
+
+@if (Model is not null)
+{
+    @Html.Partial("_PersonTable", Model.Persons)
+}
+

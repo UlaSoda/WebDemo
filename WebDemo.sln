@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebFormDemo", "WebFormDemo\", "{72072B7F-64C0-466C-918D-37C3375AF1C4}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_51514"
+		Debug.AspNetCompiler.PhysicalPath = "WebFormDemo\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51514\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_51514"
+		Release.AspNetCompiler.PhysicalPath = "WebFormDemo\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51514\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51514"
+		SlnRelativePath = "WebFormDemo\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcDemo", "MvcDemo\MvcDemo.csproj", "{D741971E-B0AC-4FB9-859C-9CBFA57A5A99}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72072B7F-64C0-466C-918D-37C3375AF1C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72072B7F-64C0-466C-918D-37C3375AF1C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72072B7F-64C0-466C-918D-37C3375AF1C4}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{72072B7F-64C0-466C-918D-37C3375AF1C4}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{D741971E-B0AC-4FB9-859C-9CBFA57A5A99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D741971E-B0AC-4FB9-859C-9CBFA57A5A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D741971E-B0AC-4FB9-859C-9CBFA57A5A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D741971E-B0AC-4FB9-859C-9CBFA57A5A99}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4FC0BDD3-27C8-472A-B788-0DB7C180693F}
+	EndGlobalSection
+EndGlobal
